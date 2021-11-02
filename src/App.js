@@ -17,12 +17,13 @@ export default class App extends Component{
 
   handleClick =async() =>{
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
+    
     let response = await axios.get(url)
     console.log (response.data)
     this.setState({location:response.data[0]})
-
+    
   }
-
+  
 handleChange =(e)=>{
  this.setState({cityValue:e.target.value})
 }
@@ -51,6 +52,7 @@ handleChange =(e)=>{
     
     </Card.Body>
     </Card>}
+    {this.state.location && <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=18&format=jpg}`}/>}
       </>
     
     
