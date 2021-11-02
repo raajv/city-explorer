@@ -49,7 +49,8 @@ Finish time: 1830
 
 Actual time needed to complete: 30 min
 
-
+lab 06 work flow - 
+<img src = "work flow.jpg">
 
 # Getting Started with Create React App
 
