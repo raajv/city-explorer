@@ -1,36 +1,53 @@
-# Project Name
+# Project Name 
+CITY EXPLORER
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: RAAJVARDHAN CHAUKULKAR
+**Version**: 1.2.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+This app will help the end user search for any city within the us and get a map for the same
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+the user must got to the website and search for the city and explore on the map what he wants to explore in the city.
+created using create react app / axios / location.iq / bootstrap
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+Languages used were node.js , and react library for js .
+used axios REST and then location.iq api to populate the page 
+react-bootstrap was used for design of the components
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+
+11-02-2021 1630 - Application now has a fully-functional search bar to search city by name 
+11-02-2021 1730 -Application now has a fully-functional ability to display map of the searched city
+11-02-2021 1830 -Application now has a fully-functional ability to show an error pop up if no city or nothing entered
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+Min (301 cohort) and me sat for 15 minutes and craeted workflow for the app
 Time Estimates
 For each of the lab features, make an estimate of the time it will take you to complete the feature, and record your start and finish times for that feature:
 
-Name of feature: ________________________________
+Name of feature: search / map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 2 hours
 
-Start time: _____
+Start time: 1530
 
-Finish time: _____
+Finish time: 1730
 
-Actual time needed to complete: _____
+Actual time needed to complete: 2hrs
+
+
+Name of feature: error
+
+Estimate of time needed to complete: 1 hours
+
+Start time: 1800
+
+Finish time: 1830
+
+Actual time needed to complete: 30 min
 
 
 
