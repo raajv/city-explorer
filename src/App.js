@@ -5,31 +5,38 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
+import Alert from 'react-bootstrap/Alert'
 export default class App extends Component{
   
   constructor(props){
     super(props);
     this.state={
       cityValue : '',
-      
+      error :false
     }
   }
 
   handleClick =async() =>{
     const url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATION_KEY}&q=${this.state.cityValue}&format=json`;
-    
-    let response = await axios.get(url)
-    console.log (response.data)
-    this.setState({location:response.data[0]})
+    try{
+      let response = await axios.get(url)
+      console.log (response.data)
+      this.setState({location:response.data[0]})
+    }catch(err){
+      this.setState({error:true})
+      console.error(err);
+    }
     
   }
   
 handleChange =(e)=>{
  this.setState({cityValue:e.target.value})
 }
+
   render() {
     return (
       <>
+      <h1> ENTER A CITY NAME TO KNOW MORE !!!</h1>
       <InputGroup className="mb-3">
     <FormControl
       onChange ={this.handleChange}
@@ -53,9 +60,14 @@ handleChange =(e)=>{
     </Card.Body>
     </Card>}
     {this.state.location && <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=18&format=jpg}`}/>}
-      </>
-    
-    
+      
+     {this.state.error && <Alert variant="danger" onClose={() => this.setState({error:false})} dismissible>
+     <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+     <p>
+       Please enter a city name and try again!!
+     </p>
+   </Alert>}
+    </>
 )
 }
 }
