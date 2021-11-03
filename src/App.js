@@ -6,6 +6,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Alert from 'react-bootstrap/Alert'
+import Weather from './Weather'
 export default class App extends Component{
   
   constructor(props){
@@ -67,7 +68,9 @@ handleChange =(e)=>{
        Please enter a city name and try again!!
      </p>
    </Alert>}
+   {this.state.location && <Weather city={this.state.cityValue} lat={this.state.location.lat} lon={this.state.location.lon}/>}
     </>
+    
 )
 }
 }
