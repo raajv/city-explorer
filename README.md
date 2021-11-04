@@ -52,6 +52,17 @@ Actual time needed to complete: 30 min
 lab 06 work flow - 
 <img src = "work flow.jpg">
 
+Name of feature: added movie search by city name functionality
+
+Estimate of time needed to complete: about 3 hours
+
+Start time: 1400
+
+Finish time: 1700
+Actual time needed to complete: 4 hours
+lab 08 work flow
+<img src = "API with weather and Movie cycle.PNG">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

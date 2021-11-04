@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Alert from 'react-bootstrap/Alert'
 import Weather from './Weather'
+import Movie from './Movie.js'
 export default class App extends Component{
   
   constructor(props){
@@ -69,6 +70,7 @@ handleChange =(e)=>{
      </p>
    </Alert>}
    {this.state.location && <Weather city={this.state.cityValue} lat={this.state.location.lat} lon={this.state.location.lon}/>}
+   {this.state.location && <Movie city={this.state.cityValue}/>}
     </>
     
 )
