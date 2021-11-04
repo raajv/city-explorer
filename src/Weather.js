@@ -7,11 +7,11 @@ export default class Weather extends Component{
     super(props);
     this.state={
       error:false,
-      weather:[]
+      weather:{}
     }
   }
   getWeather =async()=>{
-      const url = `${process.env.REACT_APP_SERVER_URL}/weather?city=${this.props.city}`;
+      const url = `${process.env.REACT_APP_SERVER_URL}/weather?lat=${this.props.lat}&lon=${this.props.lon}`;
       try{
       let response = await axios.get(url);
       this.setState({weather:response.data[0]})
@@ -32,7 +32,7 @@ export default class Weather extends Component{
      </p>
    </Alert>}
       <button onClick={this.getWeather}>click to see the weather for {this.props.city}!</button>
-      {this.state.weather &&  <p> the weather is : min temp :{this.state.weather.min_temp} max temp: {this.state.weather.max_temp} clouds: {this.state.weather.description} </p>}
+      {this.state.weather &&  <p> the weather is : Timezone:{this.state.weather.timezone} Current Temp: {this.state.weather.temp} Clouds: {this.state.weather.description} </p>}
       
       </>
     )
