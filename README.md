@@ -63,6 +63,20 @@ Actual time needed to complete: 4 hours
 lab 08 work flow
 <img src = "API with weather and Movie cycle.PNG">
 
+# lab 09
+Name of feature: reactred the server and the main app and added bootstrap components
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 1400
+
+Finish time: 1600
+
+Actual time needed to complete: 2 hrs
+same work flow 
+<img src = "API with weather and Movie cycle.PNG">
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
