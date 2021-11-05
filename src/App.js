@@ -28,7 +28,6 @@ export default class App extends Component{
       this.setState({error:true})
       console.error(err);
     }
-    
   }
   
 handleChange =(e)=>{
@@ -37,43 +36,45 @@ handleChange =(e)=>{
 
   render() {
     return (
-      <>
-      <h1> ENTER A CITY NAME TO KNOW MORE !!!</h1>
-      <InputGroup className="mb-3">
-    <FormControl
-      onChange ={this.handleChange}
-      placeholder="Enter City Name"
-      aria-label="Enter City Name"
-      aria-describedby="basic-addon2"
-      value={this.state.cityValue}
-    />
-    <Button onClick ={this.handleClick}variant="outline-secondary" id="button-addon2">
-      Explore
-    </Button>
-  </InputGroup>
-  {this.state.location && 
-    <Card style={{ width: '18rem' }}>
-    <Card.Body>
-    <Card.Title>{this.state.location.display_name}</Card.Title>
-    <Card.Text>
-    The latitude and longitude is {this.state.location.lat} , {this.state.location.lon}
-    </Card.Text>
+        < div style={{
+          backgroundColor: '#659DBD'}}>
+        <h1> ENTER A CITY NAME TO KNOW MORE !!!</h1>
+        <InputGroup className="mb-3">
+      <FormControl
+        onChange ={this.handleChange}
+        placeholder="Enter City Name"
+        aria-label="Enter City Name"
+        aria-describedby="basic-addon2"
+        value={this.state.cityValue}
+      />
+      <Button onClick ={this.handleClick}variant="outline-secondary" id="button-addon2">
+        Explore
+      </Button>
+    </InputGroup>
+    {this.state.location && 
+      <Card style={{ width: '18rem' }}>
+      <Card.Body>
+      <Card.Title>{this.state.location.display_name}</Card.Title>
+      <Card.Text>
+      The latitude and longitude is {this.state.location.lat} , {this.state.location.lon}
+      </Card.Text>
+      </Card.Body>
+      </Card>
+    }
+      {this.state.location && <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=18&format=jpg}`}/>}
+        
+        {this.state.error && <Alert variant="danger" onClose={() => this.setState({error:false})} dismissible>
+        <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
+        <p>
+          Please enter a city name and try again!!
+        </p>
+        </Alert>
+        }
+      {this.state.location && <Weather city={this.state.cityValue} lat={this.state.location.lat} lon={this.state.location.lon}/>}
+      {this.state.location && <Movie city={this.state.cityValue}/>}
+      </div>
     
-    </Card.Body>
-    </Card>}
-    {this.state.location && <img src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${this.state.location.lat},${this.state.location.lon}&zoom=18&format=jpg}`}/>}
-      
-     {this.state.error && <Alert variant="danger" onClose={() => this.setState({error:false})} dismissible>
-     <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-     <p>
-       Please enter a city name and try again!!
-     </p>
-   </Alert>}
-   {this.state.location && <Weather city={this.state.cityValue} lat={this.state.location.lat} lon={this.state.location.lon}/>}
-   {this.state.location && <Movie city={this.state.cityValue}/>}
-    </>
-    
-)
-}
+    )
+  }
 }
 
