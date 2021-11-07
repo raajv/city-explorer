@@ -1,7 +1,6 @@
 import React,{ Component } from 'react';
 import axios from 'axios';
-import Alert from 'react-bootstrap/Alert'
-import Button from 'react-bootstrap/Button'
+import WeatherDay from './WeatherDay.js'
 export default class Weather extends Component{
   
   constructor(props){
@@ -21,21 +20,11 @@ export default class Weather extends Component{
       this.setState({error:true})
       }
   }
-
-
+  
   render(){
     return(
-      <div style={{
-        backgroundColor: '#808080'}}>
-         {this.state.error && <Alert variant="danger" onClose={() => this.setState({error:false})} dismissible>
-        <Alert.Heading>Oh! No data available for this city</Alert.Heading>
-        <p>
-         Please enter a city name !
-        </p>
-        </Alert>}
-        <Button onClick={this.getWeather}>click to see the weather for {this.props.city}!</Button>
-        {this.state.weather &&  <p> the weather is : Timezone:{this.state.weather.timezone} Current Temp: {this.state.weather.temp} Clouds: {this.state.weather.description} </p>}
-      
+      <div >
+        <WeatherDay dayWeather={this.state.weather} getWeather={this.getWeather} error={this.state.error}/>
       </div>
     )
   }
