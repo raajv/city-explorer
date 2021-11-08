@@ -76,6 +76,18 @@ Actual time needed to complete: 2 hrs
 same work flow 
 <img src = "API with weather and Movie cycle.PNG">
 
+# lab 10
+
+Name of feature: Added cache for movie and wx using starter code
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 1500
+
+Finish time: 1545
+
+Actual time needed to complete: 45 min
+
 
 # Getting Started with Create React App
 
